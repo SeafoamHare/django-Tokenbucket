@@ -77,8 +77,6 @@ class OptimisticBucket:
                 self.cache.set(cache_key,{'value':new_value,'last_refill_time':now}, self.fill_rate)
             return True
         else:
-            if optimistic(self.cache,cache_key,cache_token['last_refill_time']):
-                self.cache.set(cache_key,{'value':new_value,'last_refill_time':now}, self.fill_rate)
             return False
 
     
